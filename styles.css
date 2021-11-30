@@ -1,0 +1,12 @@
+body{
+    background-color:powderblue;
+    margin-left: 2em;
+    margin-right: 8rem;
+}
+table,th,td{
+        border: 1px solid black;
+}
+.back_home{
+    margin-top: 1.5em;
+    text-align: center;
+}

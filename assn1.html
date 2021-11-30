@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    function changeImage(){
+    if(document.getElementById("DogID").src ='dogmain.JPG'){
+        document.getElementById("DogID").src = "dog1.JPG"; 
+    }
+    }
+    function changeImage1(){
+    if(document.getElementById("DogID").src ='dog1.JPG'){
+        document.getElementById("DogID").src = "dogmain.JPG"; 
+    }
+  }
+  function changeText(){
+      document.getElementById("para1").innerHTML="Welcome to Dog World!!";
+    }
+
+  function changecolorh1(){
+    document.getElementById("h1id").style.color="darkblue";
+}
+  function createlistitem(item){
+    var node = document.createElement("LI");                 // Create a <li> node
+    var textnode = document.createTextNode("Sniffing");         // Create a text node
+    node.appendChild(textnode);                              
+    document.getElementById("dq").appendChild(node);     
+  }
+  //<button onclick="deletenodefromParent()">Delete node</button><br>
+  //function deletenodefromParent(){
+    //var l = document.getElementById('dq');
+    //l.removeChild(l.childNodes[0])
+  //}
+</script>
+</head>
+<body>
+<h1 style="color:red;" id="h1id"><i>Dogs-The Loyal Companions</i></h1><br>
+<button onclick=changecolorh1()>Change Heading Colour</button><br>
+<img src="dogmain.JPG" alt="Image of a dog" width="160" height="145"id='DogID'><br>
+<button onclick="changeImage()">Change image0</button><br>
+<button onclick="changeImage1()">Change image1</button><br>
+<p style="color:darkorange;" id="para1">Dogs are the most loyal pets known.The dog is a domesticated carnivore of the family Canidae.<br>Their long association with humans has led dogs to be uniquely attuned to human behavior,and they can thrive on a starch-rich diet that would be inadequate for other canids.<br>Dogs vary widely in shape, size, and colors.They perform many roles for humans, such as hunting, herding, pulling loads, protection, assisting police and military, companionship, and, more recently, aiding disabled people, and therapeutic roles.<br> This influence on human society has given them the sobriquet of "man's best friend."</p>
+<br>
+<button onclick=changeText()>Change Text</button><br>
+<a target="_blank" href="https://en.wikipedia.org/wiki/Dog">Know more</a>
+<br>
+<a href="dogbreeds.html">Breeds</a>
+<h2>Qualities</h2>
+<button onclick="createlistitem()">See more qualities</button><br>
+<ul id='dq'>
+  <li>Friendliness</li>
+  <li>Intelligence</li>
+  <li>Adaptability</li>
+  <li>Trainability</li>
+  <li>Height</li>
+  <li>Weight</li>
+  <li>Energy level</li>
+  <li>Loyal</li>
+</ul>
+</body>
+</html>

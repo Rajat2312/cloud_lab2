@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    function form_valid(){
+      var fname = document.forms["signup_form"]["fname"];
+      var lname = document.forms["signup_form"]["lname"];
+      var phone = document.forms["signup_form"]["phone"];
+      var pass = document.forms["signup_form"]["pass"];
+      var cpass= document.forms["signup_form"]["cpass"];
+      var email = document.forms["signup_form"]["email"];
+      if(fname.value.trim()==""||fname.value.trim()==null ||fname.value === ""){
+        alert("First name is empty!");
+        return false;
+      }
+      if(lname.value.trim()==""||lname.value.trim()==null ||lname.value === ""){
+        alert("Last name is empty!");
+        return false;
+      }
+      if(phone.value.trim()==""||phone.value.trim()==null ||phone.value === ""){
+        alert("Phone no. is empty!");
+        return false;
+      }
+      if(!checkphoneNo(phone.value)){
+        alert("Phone no not valid!");
+        return false;
+      }
+      if(pass.value.trim()==""||pass.value.trim()==null ||pass.value === ""){
+        alert("Password is empty!");
+        return false;
+      }
+      var paswd=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;  ///^(?=.[0-9])(?=.[A-Z])(?=.*[!$#@&])[a-zA-Z0-9!$#@&]{7,}$/;
+      if(!paswd.test(pass.value))
+      {
+        alert("Password must contain one Captial Alphabet, one number, one special character and must be of atleast length 7");
+                return false;
+      }
+      
+      if(cpass.value.trim()==""||cpass.value.trim()==null ||cpass.value === ""){
+        alert("Confirm password is empty!");
+        return false;
+      }
+      if(pass.value != cpass.value){
+            alert("Password not matched !")
+            return false;
+        }
+      if(email.value.trim()==""||email.value.trim()==null ||email.value === ""){
+        alert("Email is empty!");
+        return false;
+      }
+      if(!ValidateEmail(email)){
+        alert("You have entered an invalid email address!");
+        return false;
+      }
+      //checkphoneNo(phone);
+      function checkphoneNo(phone){
+            var regexp =/^\d{10}$/
+            if(phone.match(regexp))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+                }
+            }
+      function ValidateEmail(email) 
+      {
+          if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(signup_form.email.value))
+          {
+              return (true)
+          }
+              
+              return (false)
+          }
+            
+            return true;
+    }
+  </script>
+</head>
+<body>
+<h2 style="color:red">Breeds of Dogs</h2>
+<table bordercolor="red">
+  <tr>
+    <th>Dog Breed</th>
+    <th>Life Expectancy</th>
+    <th>Quality</th>
+  </tr>
+  <tr>
+    <td>Boxer</td>
+    <td>10-12 years</td>
+    <td>high energy level</td>
+  </tr>
+  <tr>
+    <td>Doberman Pinscher</td>
+    <td>10-13 years</td>
+    <td>Intelligence</td>
+  </tr>
+  <tr>
+    <td>Great Dane</td>
+    <td>7-10 years</td>
+    <td>Friendliness</td>
+  </tr>
+  <tr>
+    <td>Golden Retriever</td>
+    <td>10-12 years</td>
+    <td>Playfulness</td>
+  </tr>
+  <tr>
+    <td>German Shepherd</td>
+    <td>10-14 years</td>
+    <td>Intelligence</td>
+  </tr>
+  <tr>
+    <td>Labrador Retriever</td>
+    <td>10-12 years</td>
+    <td>All round friendliness</td>
+  </tr>
+  <tr>
+    <td>Siberian Husky</td>
+    <td>12-15 years</td>
+    <td>Working and kind</td>
+  </tr>
+</table>
+<br>
+<br>
+<h4>Fill this form please!!</h4>
+<form name="signup_form" onsubmit="return form_valid()" method="POST">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname"><br>
+  <label for="Phone">Phone No:</label><br>
+  <input type="text" id="phone" name="phone"><br>
+  <label for="pass">Password:</label><br>
+  <input type="password" id="pass" name="pass"><br>
+  <label for="confirm password">Confirm Password:</label><br>
+  <input type="password" id="cpass" name="cpass"><br>
+  <label for="email">Email-ID:</label><br>
+  <input type="text" id="email" name="email"><br>
+  <input type="submit" value="Submit">
+
+</form>
+<br>
+<a href="assn1.html"><p class="back_home">Home Page</p></a>
+
+
+
+</body>
